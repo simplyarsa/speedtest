@@ -8,24 +8,27 @@
 </head>
 
 <body>
-	<h2 style="color:green">GeeksforGeeks</h2>
+	
 	<p><b> Displaying Speed in MPS</b></p>
 
-	<button onclick="getlocation()"> Click Me </button>
-	<p id="paraID"></p>
+	<h1 id="s"></h1>
 
 	
 	<script>
 	var variable1 = document.getElementById("paraID");
-
+	let a=document.getElementById("s")
+	
 	function getlocation() {
 		navigator.geolocation.getCurrentPosition(showLoc);
 	}
 
 	function showLoc(pos) {
-		variable1.innerHTML = "Speed: "
+		a.innerHTML = "Speed: "
 			+ pos.coords.speed;
+		console.log("yes")
 	}
+
+	setInterval(getlocation,1000)
 	</script>
 </body>
 
